@@ -1,0 +1,42 @@
+.settings-panel {
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    padding: 20px;
+    position: relative;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.settings-section label {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.settings-section textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+}

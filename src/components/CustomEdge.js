@@ -1,4 +1,3 @@
-// src/components/CustomEdge.js
 import React from 'react';
 import { getBezierPath } from 'reactflow';
 

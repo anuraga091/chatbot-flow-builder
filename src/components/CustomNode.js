@@ -1,12 +1,12 @@
-// src/components/CustomNode.js
 import React from 'react';
 import { Handle, Position } from 'reactflow';
+import './../App.css'
 
 const CustomNode = ({ data }) => {
   return (
-    <div style={{ padding: 10, borderRadius: 5, border: '1px solid #ddd', background: '#e6f7ff' }}>
-      <div style={{ fontWeight: 'bold' }}>{data.label}</div>
-      <div>{data.text}</div>
+    <div className='custom-node-container'>
+      <div className='data-label'>{data.label}</div>
+      <div className='data-text'>{data.text}</div>
       <Handle
         type="target"
         position={Position.Left}

@@ -1,32 +1,28 @@
 import React from 'react';
+import './NodesPanel.css'; 
 
 const nodeTypes = [
   {
     type: 'custom',
-    label: 'Message Node',
-    data: { label: 'Send Message', text: 'New Message' }
+    label: 'Message',
+    data: { label: 'Send Message', text: 'New Message' },
+    icon: '/message-icon.png'
   },
-  // Add more node types here as needed
+  
 ];
 
 const NodesPanel = ({ addNode }) => {
   return (
-    <div style={{ width: '200px', borderRight: '1px solid #ddd', padding: '10px' }}>
+    <div className="nodes-panel">
       <h3>Nodes Panel</h3>
       {nodeTypes.map((nodeType, index) => (
         <div
           key={index}
-          style={{
-            cursor: 'pointer',
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '5px',
-            marginBottom: '10px',
-            textAlign: 'center',
-          }}
+          className="node-item"
           onClick={() => addNode(nodeType)}
         >
-          {nodeType.label}
+          <img src={nodeType.icon} alt={nodeType.label} className="node-icon" />
+          <span className='text-label'>{nodeType.label}</span>
         </div>
       ))}
     </div>

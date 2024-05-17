@@ -3,31 +3,24 @@ import FlowBuilder from './components/FlowBuilder';
 import './App.css';
 
 function App() {
-  const saveChanges = () => {
-    const nodesWithEmptyTargetHandles = nodes.filter((node) => {
-      const targetEdges = edges.filter((edge) => edge.target === node.id);
-      return targetEdges.length === 0;
-    });
+  const saveChanges = (flowData) => {
+    console.log('Flow Data:', flowData);
+  };
 
-    if (nodesWithEmptyTargetHandles.length > 1) {
-      setError('Error: More than one node has empty target handles.');
-    } else {
-      setError('');
-      const flowData = { nodes, edges };
-      localStorage.setItem('flowData', JSON.stringify(flowData));
-      console.log('Saved Flow Data:', flowData);
-    }
+  const handleSaveButtonClick = () => {
+    const saveEvent = new Event('saveChanges');
+    document.getElementById('flow-builder').dispatchEvent(saveEvent);
   };
 
   return (
     <div className="App">
       <header className="header">
-        <button onClick={saveChanges}>
+        <button onClick={handleSaveButtonClick} className='save-button'>
           Save Changes
         </button>
       </header>
       <div className="main-container">
-        <FlowBuilder />
+        <FlowBuilder saveChanges={saveChanges} />
       </div>
     </div>
   );
